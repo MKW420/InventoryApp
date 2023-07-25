@@ -1,4 +1,7 @@
 import { createApp } from "vue";
-import App from "./views/LoginView";
-
-createApp(App).mount("#app");
+import App from "../src/views/DashboardView";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+//simport router from './router'
+createApp(App)
+.component('font-awesome-icon', FontAwesomeIcon)
+.mount("#app");

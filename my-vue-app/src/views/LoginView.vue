@@ -1,6 +1,7 @@
 <template>
 <div class="body">
        
+
   <div class="container">
      <img alt="Inventory App logo" src="../assets/img/logoill.png" />
     <div class="header">
@@ -30,13 +31,18 @@
 
 <script>
 
-export default {
-  // Necessary component logic here
+
+
+export default({
     name: "LoginView",
-  components: {
+  components: {  },
+
    
-  },
-};
+  
+  // Necessary component logic here
+   
+ 
+});
 </script>
 
 <style scoped>

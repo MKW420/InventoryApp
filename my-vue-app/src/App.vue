@@ -1,6 +1,7 @@
 <template>
  
  <div>
+ 
   <HeaderTrack/>
     <section class="container">
       
@@ -46,10 +47,12 @@
 <script>
 
 import  HeaderTrack from './components/Header.vue'
+
 export default {
   name: "App",
   components: {
-    HeaderTrack,
+    HeaderTrack, 
+    
   },
 };
 </script>
@@ -64,9 +67,7 @@ export default {
 body{
     font-family: 'Roboto', serif;
 }
-h1,h2,h3,h4,h5,h6{
 
-}
 a,a:hover,a:focus,a:active{
     text-decoration: none;
     outline: none;
