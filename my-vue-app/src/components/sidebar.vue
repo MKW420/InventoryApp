@@ -1,7 +1,9 @@
 <template>
   <div class="sideNav">
     <img alt="Inventory App logo" src="../assets/img/logoill.png" />
+
  
+
     <SidebarLink
       v-for="(item, index) in LinkTree"
       :key="index"
@@ -19,6 +21,7 @@ import SidebarLink from "./SidebarLink.vue";
 
 export default {
   components: { SidebarLink },
+
   name: "Sidebar-Com",
   data: () => ({
     LinkTree: [
@@ -69,7 +72,9 @@ export default {
 </script>
 
 <style scoped>
+
 body{
+
   --sidebar-bg-color: #000080;
   --sidebar-item-hover: #f49e06;
   --sidebar-item-active: #2e6dd8;
@@ -79,7 +84,9 @@ body{
   display: flex;
   flex-direction: column;
   height: 100vh;
+
   width: 200px;
+
   left: 0;
   top: 0px;
   z-index: 1;

@@ -1,11 +1,14 @@
 <template>
   <div class="container">
+
     <h1>Welcome to the Dashboard</h1>
     
+
     <div class="head-title">
       <div class="left"></div>
       <ul class="box-info">
         <li v-for="card in cards" :key="card.id">
+
           <div class="IconBx">
                 <i
             class="bx"
@@ -15,6 +18,7 @@
 
           </div>
           
+
           <span class="text">
             <h3>{{ card.number }}</h3>
             <h2>{{ card.name }}</h2>
@@ -27,11 +31,8 @@
 
 <script>
 
-
 export default {
-  components:{
-  
-  },
+
   props: {
     cards: {
       type: Array,
@@ -54,17 +55,20 @@ body {
 }
 
 .container {
+
   max-width: 2500px;
   height:200px;
   padding: 0px 8rem;
   /* border:3px solid var(--dark);  */
   margin-left:50px ;
   position: absolute;
+
 }
 
 body {
   background: var(--lighty);
 }
+
 .left{
    display: flex;
   justify-content: center;
@@ -90,18 +94,22 @@ body {
   box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
          /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
   cursor: pointer;
+
 }
 
 .box-info li .bx {
   width: 80px;
   height: 80px;
+
   border-radius: 50px;
   font-size: 36px;
+
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .IconBx{
    display: flex;
   justify-content: center;
@@ -128,4 +136,5 @@ margin-left: 150px;
  font-size:200%;
  color:black;
 }
+
 </style>

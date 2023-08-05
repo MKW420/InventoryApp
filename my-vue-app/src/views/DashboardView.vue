@@ -1,4 +1,5 @@
 <template>
+
 <div>
    
   <div id="app">
@@ -98,6 +99,7 @@ export default( {
 
 
    
+
   setup() {
     return {
       dashboardData: [
@@ -105,37 +107,46 @@ export default( {
           id: 1,
           icon: "bx bxs-calendar-check",
           number: 200,
+
           name: "Total Suppliers",
           color: "#2e6dd8",
           backgroundColor: "",
+
         },
         {
           id: 2,
           icon: "bx bx-box",
           number: 550,
+
           name: "Total Brands",
           color: "#f4ac0c",
           backgroundColor: "",
+
         },
         {
           id: 3,
           icon: "bx bx-building",
           number: 690,
+
           name: "Total Products",
           color: "#000080",
           backgroundColor: "",
+
         },
         {
           id: 4,
           icon: "bx bx-money",
           number: 7250,
+
           name: "Total Categories",
           color: "#f4ac0c",
           backgroundColor: "",
+
         },
 
         // Add more data for other cards if needed
       ],
+
     }
   }
 });
@@ -191,5 +202,6 @@ h1{
    max-width: 50%;
  flex: 5;
 }
+
 
 </style>

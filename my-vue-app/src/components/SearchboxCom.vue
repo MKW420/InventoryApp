@@ -1,10 +1,12 @@
 <template>
   <div class="search-box">
+
     <i class='bx bx-align-left bx-sm '></i>
     
     <input  type="text" placeholder="Search..." />
     <p class="fa fa-search"></p>
     
+
   </div>
 </template>
 
@@ -27,6 +29,7 @@ export default {
 <style>
 .search-box {
   padding: 10px;
+
   margin-left:20%;
  
 }
@@ -44,5 +47,6 @@ input {
 i{
  
  margin-right:15px;
+
 }
 </style>
