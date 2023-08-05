@@ -1,6 +1,8 @@
 <template>
  <!-- will add style and toggle active function -->
  <div class="menu-item" :class="{expanded:expanded}">
+       <i class="fa fa-home" aria-hidden="true"></i>
+         
         <div class="label"
          @click="toggleMenu()"
         :style="{
@@ -110,12 +112,15 @@ export default ({
   color:white;
    width:100%;
    display:flex;
+/* 
+   align-items: center;
+   justify-content: center; */
    flex-direction: row; 
-   justify-content: space-between;
+  margin-left:20px;
    white-space: nowrap;
    user-select: none;
    height:50px;
-   padding:0 20px;
+
    box-sizing:border-box;
    color: white;
 
@@ -147,11 +152,14 @@ i{
 }
 
 .menu-item:hover{
-    background-color:#F49E06;
+    /* background-color:; */
+   
     cursor: pointer;
     color:black;
 }
-
+.label:hover{
+      color:#f49e06;
+}
 .items-container{
     width:100%;
     overflow: hidden;
