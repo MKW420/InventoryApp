@@ -2,7 +2,7 @@
     <header>
    
         <ul class="navlist">
-            <img class="logo" src="../assets/img/logoill.png"> 
+           
         </ul>
      
 

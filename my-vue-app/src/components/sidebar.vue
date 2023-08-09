@@ -1,7 +1,9 @@
 <template>
   <div class="sideNav">
     <img alt="Inventory App logo" src="../assets/img/logoill.png" />
-    <SearchboxCom />
+
+ 
+
     <SidebarLink
       v-for="(item, index) in LinkTree"
       :key="index"
@@ -15,10 +17,11 @@
 
 <script>
 import SidebarLink from "./SidebarLink.vue";
-import SearchboxCom from "./SearchboxCom.vue";
+
 
 export default {
-  components: { SidebarLink, SearchboxCom },
+  components: { SidebarLink },
+
   name: "Sidebar-Com",
   data: () => ({
     LinkTree: [
@@ -69,7 +72,9 @@ export default {
 </script>
 
 <style scoped>
-:root {
+
+body{
+
   --sidebar-bg-color: #000080;
   --sidebar-item-hover: #f49e06;
   --sidebar-item-active: #2e6dd8;
@@ -79,7 +84,9 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 240px;
+
+  width: 200px;
+
   left: 0;
   top: 0px;
   z-index: 1;
