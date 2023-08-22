@@ -1,13 +1,19 @@
 <template>
+<div class="banner">
   <div class="search-box">
 
-    <i class='bx bx-align-left bx-sm '></i>
-    
-    <input  type="text" placeholder="Search..." />
-    <p class="fa fa-search"></p>
-    
+    <i class='bx bx-align-left bx-sm ' id="menu"></i>
 
+    
+    <input   type="text" placeholder="Search..." />
+     
+    <i class='bx bx-bell bx-sm bx-tada' id="left-icon"></i>
+     <i class='bx bx-cog bx-sm' id="icony" ></i>
+     <div class="img">
+     </div>
   </div>
+
+</div>
 </template>
 
 <script>
@@ -27,12 +33,16 @@ export default {
 </script>
 
 <style>
+@import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
 .search-box {
   padding: 10px;
 
   margin-left:20%;
  
 }
+
+
+
 input {
   width: 600px;
   border: 1px solid  rgba(12,12,12,0.2);
@@ -46,7 +56,98 @@ input {
 }
 i{
  
- margin-right:15px;
+ margin-right:10px;
+
+}
+#left-icon{
+  margin-left:300px;
+}
+.img{
+
+  border:3px solid green;
+  /* background-color: green; */
+  height:20px;
+  width:20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-left:50px;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  input {
+  width: 500px;
+  border: 1px solid  rgba(12,12,12,0.2);
+  padding: 10px 0px;
+  margin-left:30px;
+
+}
+.img{
+
+  border:3px solid green;
+  /* background-color: green; */
+  height:20px;
+  width:20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-left:50px;
+}
+i{
+ 
+ margin-right:10px;
+
+}
+#left-icon{
+  margin-left:570px;
+}
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px)  {
+
+input {
+  width: 115px;
+  border: 1px solid  rgba(12,12,12,0.2);
+  padding: 5px 40px;
+  margin-left:30px;
+
+}
+#icony{
+ 
+
+ display:none;
+}
+#left-icon{
+  margin-left:70px;
+}
+.img{
+display: none;
+}
+#menu{
+  display: none;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+input {
+  width: 185px;
+  border: 1px solid  rgba(12,12,12,0.2);
+  padding: 7px 40px;
+  margin-left:30px;
+
+}
+#icony{
+ 
+
+ display:none;
+}
+#left-icon{
+  margin-left:180px;
+}
+.img{
+margin-left:15px;
+}
 
 }
 </style>
