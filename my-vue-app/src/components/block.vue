@@ -1,9 +1,6 @@
 <template>
   <div class="container">
 
-    <h1>Welcome to the Dashboard</h1>
-    
-
     <div class="head-title">
       <div class="left"></div>
       <ul class="box-info">
@@ -56,18 +53,14 @@ body {
 
 .container {
 
-  max-width: 2500px;
-  height:200px;
+  max-width: 100%;
+  height:300px;
   padding: 0px 8rem;
-  /* border:3px solid var(--dark);  */
-  margin-left:50px ;
+ 
+  margin-left:250px ;
   position: absolute;
-
 }
 
-body {
-  background: var(--lighty);
-}
 
 .left{
    display: flex;
@@ -77,17 +70,19 @@ body {
 .box-info {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-left:150px;
+  margin-left:110px;
   grid-gap: 20px;
-  margin-top: 0px;
+  margin-top: 25px;
+
+
   /* border:3px solid var(--dark);  */
-  width:900px;
+  width:100%;
 }
 
 .box-info li {
   padding: 5px;
   background: var(--light);
-  border-radius: 40px;
+  border-radius: 6px;
   grid-gap: 20px;
   display: table-cell;
   vertical-align: middle;
@@ -101,7 +96,7 @@ body {
   width: 80px;
   height: 80px;
 
-  border-radius: 50px;
+  border-radius: 5px;
   font-size: 36px;
 
 
@@ -114,6 +109,8 @@ body {
    display: flex;
   justify-content: center;
   align-items: center;
+  
+
 }
 h2{
   font-size:80%;
@@ -132,9 +129,121 @@ h3{
 }
 
 h1{
-margin-left: 150px;
+
  font-size:200%;
  color:black;
+
+ width:100%;
+ font-weight: 200;
 }
 
-</style>
+
+.btns{
+  margin-left:10px;
+}
+/* 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+/* .box-info li .bx{
+  width: 10px;
+  height: 50px;
+ border:1px solid black;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+} */
+/* h3{
+   font-size:120%;
+   margin-top:10px;
+ 
+}
+h2{
+  font-size:55%;
+  color:var(--jumbo);
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+} */
+/* h1{
+margin-left: -20px;
+ font-size:150%;
+ color:black;
+ margin-top:20px;
+ width:100%;
+ font-weight: 200;
+}
+h5{
+  font-size:15px;
+  display:none;
+} */
+/* p{
+  margin-left:-60px;
+}
+.box-info {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-left:-80px;
+  grid-gap: 10px;
+  margin-top: 25px;
+  /* border:3px solid var(--dark);  */
+  /* width:300px; */
+/* } */
+/* button{
+  border:1px solid green;
+ font-size: 11px;
+
+  height:20px;
+  width: 100px;
+
+}
+.btns{
+  margin-left:-20px;
+}
+.message{
+  display: none;
+} */
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+/* .box-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left:50px;
+  grid-gap: 10px;
+  margin-top: 25px;
+  /* border:3px solid var(--dark);  */
+  /* width:450px;
+} 
+.box-info li .bx{
+  width: 100px;
+  height: 100px;
+
+  font-size: 25px;
+ 
+
+} */
+
+/* .btns{
+  margin-left:80px;
+} */
+/* h1{
+margin-left: 80px;
+ font-size:180%;
+ color:black;
+ margin-top:20px;
+ width:100%;
+ font-weight: 200;
+}
+.greeting{
+  font-size:15px;
+  margin-left: 80px;
+ 
+} */
+/* .message{
+  margin-left:80px;
+} */
+}
+</style> 

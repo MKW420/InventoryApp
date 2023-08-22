@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderTrack />
-    <section class="container">
+    <section class="containerp">
       <div class="header">
         <h1>Welcome to Invento Syst.</h1>
 
@@ -52,9 +52,7 @@ export default {
   padding: 0;
 }
 
-body {
-  font-family: "Roboto", serif;
-}
+
 
 a,
 a:hover,
@@ -69,12 +67,22 @@ a:focus {
   color: #333;
   text-decoration: none;
 }
-.container {
+.containerp {
   background-image: linear-gradient(#2e6dd8, #000080);
   height: 100vh;
   width: 100%;
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", serif;
+}
+h1{
+     display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: underline;
 }
 
 .header h1 {
@@ -85,6 +93,8 @@ a:focus {
   transform: translate(-50%, -50%);
   font-size: 50px;
   z-index: 1;
+  text-decoration: none;
+
 }
 
 .header p {
@@ -133,19 +143,7 @@ ul li {
   opacity: 0;
   background: #f49e06;
 }
-/* .navlist li{
-       border:none;
-       position: relative;
-       background:none;
-       margin:50px;
-       top:25px;
-       margin-left: 80px;
-       list-style-type: none;
-       opacity: 1 ;
-       padding-left: 0;
-      
-   
-   } */
+
 .link1 {
   display: inline;
   color: #f49e06;
