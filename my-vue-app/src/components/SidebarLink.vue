@@ -1,7 +1,8 @@
 <template>
  <!-- will add style and toggle active function -->
+
  <div class="menu-item" :class="{expanded:expanded}">
-       <i class="fa fa-home" aria-hidden="true"></i>
+      
          
         <div class="label"
          @click="toggleMenu()"
@@ -11,16 +12,19 @@
         
         >
 
-       <font-awesome-icon icon="fa-solid fa-user-secret" size="lg"/>
+     
 
            <span>{{label}}</span>
             
         </div>
+       
         <div v-show="showChildren" class="items-container" ref="container" :style="{height:containerHeight}">
+         
             <menu-item
                 v-for="item, index in data"
                 :key="index"
                 :label="item.label"
+                
                 :icon="item.icon"
                 :depth="depth + 1"
                 :data="item.children"
@@ -28,7 +32,6 @@
             </div>
     </div>
 
-    
 </template>
 
 
@@ -103,6 +106,8 @@ export default ({
 </script>
 
 <style scoped>
+@import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
+
 .menu-item{
   position: relative;
     width:100%;
@@ -166,5 +171,31 @@ i{
     transition: height .3s ease;
 }
 
+.link{
+    display: flex;
+    align-items: center;
 
+    cursor:pointer;
+    position:relative;
+    font-weight:400;
+    user-select:none;
+
+    margin:0.1em 0;
+    padding:0.4em;
+    border-radius: 0.25em;
+    height:1.5em;
+
+    color:white;
+    text-decoration: none;
+}
+.link:hover{
+
+}
+/* Small devices (phones) */
+@media only screen and (max-width: 600px) {
+.menu-item > .label{
+font-size: 11px;
+
+}
+}
 </style>

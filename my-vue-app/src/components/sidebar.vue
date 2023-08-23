@@ -1,18 +1,40 @@
 <template>
-  <div class="sideNav">
-    <img alt="Inventory App logo" src="../assets/img/logoill.png" />
 
+
+  <div class="sideNav" >
+    <div class="logo">
+    <img alt="Inventory App logo" src="../assets/img/logoill.png" />
+   </div>
  
 
     <SidebarLink
       v-for="(item, index) in LinkTree"
       :key="index"
       :label="item.label"
+      
       :icon="item.icon"
       :depth="0"
       :data="item.children"
     />
+
+    <div id="navbar-wrapper">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand"><i class=""></i></a>
+
+
+        </div>
+        </div>
+      </nav>
+
+
+
+
+
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -27,25 +49,37 @@ export default {
     LinkTree: [
       {
         label: "Home",
-        icon: "home",
+        icon: "",
         children: [
           {
             label: "level 1.1",
             children: [
               {
                 label: "level 1.1.1",
+                icon: "",
               },
             ],
           },
 
           {
             label: "level 1.2",
+            icon: "",
           },
         ],
       },
       {
         label: "Settings",
-        icon: "settings",
+        icon: "bx bx-cog",
+         children: [
+          {
+            label: "Profile",
+          },
+          
+          {
+            label: "App ",
+            icon: "",
+          },],
+          
       },
       {
         label: "Dashboard",
@@ -72,6 +106,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
 
 body{
 
@@ -102,4 +137,43 @@ img {
   height: 140px;
   margin-left: 40px;
 }
+.collapse-icon{
+  position: absolute;
+  bottom: 0;
+  padding:0.75em;
+}
+/* Small devices (phones) */
+@media only screen and (max-width: 600px) {
+
+.sideNav {
+ width: 120px;
+
+
+}
+img {
+  width: 80px;
+  height: 80px;
+  margin-left: 25px;
+}
+} 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+
+.sideNav {
+ width: 170px;
+
+
+}
+img {
+  width: 100px;
+  height: 100px;
+  margin-left: 25px;
+}
+
+
+
+
+
+} 
 </style>

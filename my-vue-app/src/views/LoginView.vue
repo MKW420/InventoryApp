@@ -4,10 +4,7 @@
 
   <div class="container">
      <img alt="Inventory App logo" src="../assets/img/logoill.png" />
-    <div class="header">
    
-    
-    </div>
     <p class="login-info">Please enter your login credentials</p>
     <form>
       <div class="form-group">
@@ -48,14 +45,17 @@ export default({
 <style scoped>
 /* Component-specific styles */
 .container {
-  max-width: 400px;
+  max-width: 700px;
   margin: 100px auto;
-  padding: 20px;
+  padding: 50px;
+  height:500px;
   background-color: #2E6DD8;
   border-radius: 10px;
  box-shadow: 0  0 20px #2E6DD8;
    font-family: 'Roboto', serif;
+
 }
+
 .body{
   background:#000080;
     height:100vh;
@@ -65,20 +65,18 @@ export default({
     height: 100vh;
   background: linear-gradient(-45deg, #00000e 0%, #2E6DD8 23%, #000080 50%100%);;
   background-size: 400% 400%;
+ display: flex;
+  align-items: center;
+  justify-content: center;
 
   animation: animate 7.5s ease-in-out infinite;
  
 
 }
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-}
+
 
 .header h1 {
-  margin-right: 10px;
+
   color: #fff;
 }
 .login-info {
@@ -91,8 +89,10 @@ export default({
 .form-group {
   margin-bottom: 20px;
   color:#fff;
-  margin-left:50px;
  
+ display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -124,7 +124,7 @@ export default({
    
     font-size:15px;
     z-index:1;
-    border-radius: 80px;
+  
     border: 2px solid #F49E06;
     box-shadow: 0  0 20px #F49E06;
     border-radius: 4px;
@@ -137,7 +137,7 @@ export default({
 img{
   width:140px;
   height: 140px;
-  margin-left: 140px;
+  margin-left: 110px;
 }
 a{
   color:#F49E06;
@@ -155,8 +155,7 @@ a{
 }
 @media (max-width: 480px) {
   .container {
-    margin: 50px 10px;
-    padding: 10px;
+ 
   }
 }
 </style>

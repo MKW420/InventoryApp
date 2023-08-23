@@ -4,25 +4,26 @@
    
   <div id="app">
     <Sidebar />
+ 
     <nav>
      
        <SearchboxCom />
+       <div>
+        
+       </div>
     </nav>
+ 
+    <div >
     
-    <div>
-    <DashBanner/>
           <!-- <h1>Dashboard</h1> -->
     <DashboardTrack :cards="dashboardData" />
     </div>
+    
   <div class="tbls">
      <div class="smlTable">
-          <TblTrackCom class="othertbl" :rows="Tbldata"/>
+          <TblTrackCom class="" :rows="Tbldata"/>
      </div>
-     <div class="table">
     
-     <TblTrackCom :rows="Tbldata"/>
-      
-    </div> 
   </div>
   </div>
 
@@ -31,11 +32,13 @@
 </template>
 
 <script >
+
 import Sidebar from "../components/sidebar.vue";
 import SearchboxCom from "../components/SearchboxCom.vue";
 import DashboardTrack from "../components/block.vue";
-import TblTrackCom from "../components/table/tableCom.vue"
-import DashBanner from "../components/bannerCom.vue"
+import TblTrackCom from "../components/table/tableCom.vue";
+
+
 
 export default( {
   components: {
@@ -44,12 +47,13 @@ export default( {
     SearchboxCom,
     DashboardTrack,
     TblTrackCom,
-    DashBanner
+ 
+   
   
     
  
   },
-
+ 
   data() {
     return {
       Tbldata:[{
@@ -119,7 +123,7 @@ export default( {
           number: 550,
 
           name: "Total Brands",
-          color: "#f4ac0c",
+          color: "#2e6dd8",
           backgroundColor: "",
 
         },
@@ -129,7 +133,7 @@ export default( {
           number: 690,
 
           name: "Total Products",
-          color: "#000080",
+          color: "#2e6dd8",
           backgroundColor: "",
 
         },
@@ -139,7 +143,7 @@ export default( {
           number: 7250,
 
           name: "Total Categories",
-          color: "#f4ac0c",
+          color: "#2e6dd8",
           backgroundColor: "",
 
         },
@@ -155,7 +159,8 @@ export default( {
 </script>
 
 <style scoped>
-
+@import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
+@import url('https://api.iconify.design/mingcute/notification-line.svg');
 #app {
   font-family: "Roboto", serif;
   
@@ -176,32 +181,44 @@ h1{
 .smlTable{
      height: 500px;
     gap: 2rem;
-    margin-top:100px;
+    margin-top:250px;
     max-height:500px;
-    max-width: 50%;
-      flex: 3;
+    width: 100%;
+    margin-left: 10px;
+      
      
        
 }
-.othertbl{
- margin-left:180px;
-}
+
 .tbls{
   display: flex;
     width: 100%;
     height: 500px;
-      margin-top:250px;
+    margin-top:200px;
 }
-.table {
-   
-   height: 500px;
-   gap: 2rem;
-   margin-top:100px;
-   margin-left:-200px;
-   max-height: 500px;
-   max-width: 50%;
- flex: 5;
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+/* .smlTable{
+     
+    margin-left: 70px;
+   width: 75%;
+} */
 }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+/* .smlTable{
+     
+    margin-left: 70px;
+    margin-top:300px;
+    width: 15%;
+} */
+
+
+} 
+  
+
 
 
 </style>
