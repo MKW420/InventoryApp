@@ -19,7 +19,7 @@
         <th>Name</th> 
         <th>Name</th> 
         <th>Name</th> 
-        <th>Name</th> 
+      
              
 
     </tr>
@@ -31,9 +31,8 @@
         <td> {{row.id}}</td>
         <td>{{row.col1}}</td>
         <td>{{row.col2}}</td>
-        <td>{{row.col3}}</td>
-        <td>{{row.col4}}</td>
-        <td><button>yellow</button></td>
+      
+        <td><button id="btn-green">Action</button></td>
 
 
     </tr>
@@ -69,6 +68,7 @@ export default ({
 
 th{
     border-bottom:3px solid black;
+
 }
 .user-table {
    display: flex;
@@ -85,15 +85,22 @@ table.tbl {
    border-collapse: collapse; /* Hücre içi çizgileri birleştir */
     background-color: white;
    overflow: hidden;
-   width: 65%;
+   width: 100%;
    text-align: center;
    table-layout: fixed;
+   border-radius:5px;
 }
 
 table.tbl th {
-   font-size: 20px;
+   font-size: 15px;
 }
-
+td{
+    font-size:15px;
+}
+td:hover{
+    background:#D5D9E5;
+    opacity: 1px;
+}
 table.tbl th,
 table.tbl td {
    padding: 0.5rem 2rem;
@@ -121,5 +128,16 @@ tr{
 }
 .mainhead th{
    border-bottom: 1px solid #E4E4E4;
+}
+#btn-green{
+    border:1px solid #000080;
+    background-color: white;
+    height:22px;
+    width:62px;
+    border-radius: 5px;
+}
+#btn-green:hover{
+    background: #000080;
+    color:white;
 }
 </style>

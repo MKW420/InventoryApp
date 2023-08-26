@@ -1,6 +1,6 @@
 <template>
  
- <div>
+ <div id="main-cat">
        
 
          <div v-for="category in categories" :key="category.id" class="row-ctnr "  >
@@ -50,6 +50,10 @@ h5{
     padding-left:0;
    } 
 }
+main-cat{
+  height:100vh;
+  width:100%;
+}
 row-main{
     height:100px;
 
@@ -62,9 +66,13 @@ ul{
     border-radius:3px;
     background-color:#2e6dd8 ;
     border: 1px solid #BAB9B9;
+    
     color:white;
    list-style: none;
     text-align: center;
+}
+#containerl:hover{
+  border-bottom:8px solid #f49e06 ; 
 }
 .data-info{
      line-height: 1.3;
@@ -73,12 +81,12 @@ ul{
 
 
   position: relative;
-  margin-top:5px;
+
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
   margin-left: 1rem;
-  border-radius: 6px;
+  border-radius: 5px;
   backface-visibility: hidden;
 text-align: center;
   z-index: 1;
@@ -94,7 +102,7 @@ a{
 #containerl{
 padding: 30px;
 border: 1px solid #BAB9B9;
-background-color:#2e6dd8 ;
+   background:linear-gradient(135deg, #61b2d8 0%, #2E6DD8 100%);
 opacity: 0.6;
   border-radius: 6px;
 height: 100px;
@@ -107,9 +115,10 @@ margin-left: 0px;
 #containerl:hover{
     opacity:1;
     background-color:#f49e06 ;
+    
 }
 #smallCtnr{
-padding: 20px;
+/* padding: 20px; */
 }
 
 #B-container{
@@ -129,5 +138,7 @@ export default ({
     },
    }
 })
+
+
 
 </script>
