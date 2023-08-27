@@ -3,7 +3,7 @@
 
   <div class="sideNav" >
     <div class="logo">
-    <img alt="Inventory App logo" src="../assets/img/logoill.png" />
+    <img alt="Inventory App logo" src="../assets/Logo2.png" />
    </div>
  
 
@@ -83,7 +83,7 @@ export default {
       },
       {
         label: "Dashboard",
-        icon: "dashboard",
+        icon: "bx bx-home-alt-2",
       },
       {
         label: "Suppliers",
@@ -119,7 +119,7 @@ body{
   display: flex;
   flex-direction: column;
   height: 100vh;
-
+    
   width: 200px;
 
   left: 0;
@@ -129,7 +129,7 @@ body{
   padding: 0.3em;
   bottom: 0;
   border-right: 1px solid #f49e06;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   overflow: auto;
 }
 img {

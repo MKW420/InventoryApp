@@ -68,7 +68,6 @@ export default({
  display: flex;
   align-items: center;
   justify-content: center;
-
   animation: animate 7.5s ease-in-out infinite;
  
 
