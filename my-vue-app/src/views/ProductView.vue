@@ -4,12 +4,10 @@
     <nav>
       <SearchboxCom />
     </nav>
-    <div id="prod-banner">
-      <Banner-com />
-    </div>
+ 
     <div id="prod-Tbl">
       <div id="dropdown">
-        <label for="product-select">Select Product:</label>
+        <label for="product-select">Select Category:</label>
         <select id="product-select" v-model="selectedProduct">
           <option
             v-for="product in products"
@@ -28,14 +26,14 @@
 <script>
 import Sidebar from "../components/sidebar.vue";
 import SearchboxCom from "../components/SearchboxCom.vue";
-import BannerCom from "../components/bannerCom.vue";
+
 import TblTrackCom from "../components/table/tableCom.vue";
 
 export default {
   components: {
     Sidebar,
     SearchboxCom,
-    BannerCom,
+
     TblTrackCom,
   },
 
@@ -135,9 +133,9 @@ export default {
         },
       ],
       products: [
-        { id: 1, name: "Product A" },
-        { id: 2, name: "Product B" },
-        { id: 3, name: "Product C" },
+        { id: 1, name: "Category A" },
+        { id: 2, name: "Category B" },
+        { id: 3, name: "Category C" },
         // Add more dummy products as needed
       ],
       selectedProduct: null,
