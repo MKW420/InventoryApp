@@ -1,26 +1,42 @@
 <template>
   <!-- will add style and toggle active function -->
-  <div class="menu-item" :class="{ expanded: expanded }">
+
+  <div class="menu-item" :class="{ opened: expanded }">
+
     <div
       class="label"
       @click="toggleMenu()"
       :style="{ paddingLeft: depth * 20 + 20 + 'px' }"
     >
-      <span><i :class="icon"></i>{{ label }}</span>
+
+    <div class="left">
+      <span >{{ label }}</span>
+      </div>
+      <div v-if="data" class="right">
+        <i class="" :class="{opened:expanded}"></i>
+
+        </div>
     </div>
     <div
       v-show="showChildren"
+      :class="{'small-menu': smallMenuToggle}"
       class="items-container"
       ref="container"
       :style="{ height: containerHeight }"
+      
     >
       <menu-item
+       :class="{opened:showChildren}"
+
         v-for="(item, index) in data"
         :key="index"
         :label="item.label"
         :icon="item.icon"
         :depth="depth + 1"
         :data="item.children"
+
+        :smallMenuToggle="smallMenuToggle"
+
       />
     </div>
   </div>
@@ -40,10 +56,12 @@ export default {
     label: {
       type: String,
       required: true,
+
     },
     icon: {
       type: String,
     },
+
     depth: {
       type: Number,
       require: true,
@@ -51,6 +69,16 @@ export default {
     data: {
       type: Array,
     },
+
+    smallMenuToggle:{
+      type:Boolean
+    },
+    computed:{
+      showLabel(){
+        return this.smallMenuToggle ? this.depth > 0: true;
+      }
+    }
+
   },
   methods: {
     toggleMenu() {
@@ -109,8 +137,10 @@ export default {
   user-select: none;
   height: 50px;
 
+  margin-top:15px;
   box-sizing: border-box;
-  color: white;
+   color: black;
+     font-weight:500;
 }
 
 .menuitem div {
@@ -120,13 +150,15 @@ export default {
 }
 i {
   font-size: 20px;
-  color: black;
+
   transition: all 0.3s ease;
+ 
 }
 
-:expand {
+.expand {
   font-size: 16px;
   color: #cacaca;
+
 }
 
 .menu-item:hover {
@@ -136,10 +168,11 @@ i {
   color: black;
 }
 .label:hover {
-  color: #f49e06;
+  
 }
 .items-container {
   width: 100%;
+  left:calc(100%+6px);
   overflow: hidden;
   transition: height 0.3s ease;
 }
@@ -164,9 +197,57 @@ i {
 .link:hover {
 }
 /* Small devices (phones) */
-@media only screen and (max-width: 600px) {
-  .menu-item > .label {
-    font-size: 11px;
-  }
+
+@media only screen and (min-width:640px) and (max-width: 767px){
+.menu-item > .label {
+font-size:12px;
+
+
 }
+.name{
+
+
+margin-left:0px;
+font-size:13px;
+
+
+}
+.logo{
+margin-right:10px;
+
+
+}
+img {
+  width: 30px;
+  height: 30px;
+ margin-right:10px;
+}
+
+}
+/* mobile devices */
+@media only screen and (min-width: 360px)and (max-width: 639px) {
+  .menu-item > .label {
+font-size:13px;
+
+
+}
+.name{
+
+
+margin-left:0px;
+font-size:10px;
+
+}
+.logo{
+margin-right:0px;
+
+}
+img {
+  width: 30px;
+  height: 30px;
+ margin-right:0px;
+}
+}
+
+
 </style>

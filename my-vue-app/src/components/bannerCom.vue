@@ -29,7 +29,7 @@ export default ({
      justify-content: center;
      align-items: center;
     width:100%;
-    height:200px;
+    height:100px;
     border-radius: 5px;
     margin-left:-20px;
      background:linear-gradient(135deg, #61b2d8 0%, #2E6DD8 100%);
