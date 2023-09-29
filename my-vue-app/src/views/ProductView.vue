@@ -4,10 +4,11 @@
     <nav>
       <SearchboxCom />
     </nav>
- 
+
     <div id="prod-Tbl">
       <div id="dropdown">
         <label for="product-select">Select Category:</label>
+
         <select id="product-select" v-model="selectedProduct">
           <option
             v-for="product in products"
@@ -33,6 +34,8 @@ export default {
   components: {
     Sidebar,
     SearchboxCom,
+
+
 
     TblTrackCom,
   },
@@ -133,9 +136,11 @@ export default {
         },
       ],
       products: [
+
         { id: 1, name: "Category A" },
         { id: 2, name: "Category B" },
         { id: 3, name: "Category C" },
+
         // Add more dummy products as needed
       ],
       selectedProduct: null,

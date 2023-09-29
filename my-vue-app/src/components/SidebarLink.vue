@@ -1,11 +1,14 @@
 <template>
   <!-- will add style and toggle active function -->
+
   <div class="menu-item" :class="{ opened: expanded }">
+
     <div
       class="label"
       @click="toggleMenu()"
       :style="{ paddingLeft: depth * 20 + 20 + 'px' }"
     >
+
     <div class="left">
       <span >{{ label }}</span>
       </div>
@@ -24,13 +27,16 @@
     >
       <menu-item
        :class="{opened:showChildren}"
+
         v-for="(item, index) in data"
         :key="index"
         :label="item.label"
         :icon="item.icon"
         :depth="depth + 1"
         :data="item.children"
+
         :smallMenuToggle="smallMenuToggle"
+
       />
     </div>
   </div>
@@ -50,10 +56,12 @@ export default {
     label: {
       type: String,
       required: true,
+
     },
     icon: {
       type: String,
     },
+
     depth: {
       type: Number,
       require: true,
@@ -61,6 +69,7 @@ export default {
     data: {
       type: Array,
     },
+
     smallMenuToggle:{
       type:Boolean
     },
@@ -69,6 +78,7 @@ export default {
         return this.smallMenuToggle ? this.depth > 0: true;
       }
     }
+
   },
   methods: {
     toggleMenu() {
@@ -126,6 +136,7 @@ export default {
   white-space: nowrap;
   user-select: none;
   height: 50px;
+
   margin-top:15px;
   box-sizing: border-box;
    color: black;
@@ -191,6 +202,7 @@ i {
 .menu-item > .label {
 font-size:12px;
 
+
 }
 .name{
 
@@ -198,9 +210,11 @@ font-size:12px;
 margin-left:0px;
 font-size:13px;
 
+
 }
 .logo{
 margin-right:10px;
+
 
 }
 img {
@@ -208,11 +222,13 @@ img {
   height: 30px;
  margin-right:10px;
 }
+
 }
 /* mobile devices */
 @media only screen and (min-width: 360px)and (max-width: 639px) {
   .menu-item > .label {
 font-size:13px;
+
 
 }
 .name{
@@ -232,5 +248,6 @@ img {
  margin-right:0px;
 }
 }
+
 
 </style>

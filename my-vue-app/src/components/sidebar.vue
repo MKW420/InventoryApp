@@ -1,4 +1,5 @@
 <template>
+
   <div class="sideNav" :class="{'small-menu':smallMenuToggle}" >
      
            <span  @click="smallMenuToggle = !smallMenuToggle">
@@ -17,6 +18,7 @@
        
     
 
+
   
     
     <SidebarLink
@@ -28,6 +30,7 @@
       :data="item.children"
       :smallMenuToggle="smallMenuToggle"
     />
+
     
   <div id="block-bottom">
     <ul>
@@ -51,13 +54,13 @@
       </label>
     </ul>
 
+
     </div>
   </div>
 </template>
 
 <script>
 import SidebarLink from "./SidebarLink.vue";
-
 
 export default {
   mounted(){
@@ -181,7 +184,9 @@ ul{
   position: fixed;
   display: flex;
   flex-direction: column;
+
   width:180px;
+
   left: 0;
   top: 0px;
   z-index: 1;
@@ -194,6 +199,7 @@ ul{
      background:white;
      box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
+
 body.darkTheme{
   --sidebar-bg-color: #000080;
 }
@@ -274,4 +280,5 @@ flex-direction: row;
  
 }
 }
+
 </style>
