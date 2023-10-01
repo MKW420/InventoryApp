@@ -1,25 +1,25 @@
 <template>
 <div class="user-table">
+
     <table class="tbl"  >
         <colgroup>
+             <col style="width:15%"/>
              <col style="width:20%"/>
-             <col style="width:35%"/>
-             <col style="width:35%"/>
-              <col style="width:35%"/>
+             <col style="width:20%"/>
+              <col style="width:20%"/>
 
 
         </colgroup>
 
 <thead>
-    <tr class="mainhead">
-        <th>Heading</th> 
-        </tr>
+   
     <tr >
-        <th>Name</th> 
-        <th>Name</th> 
-        <th>Name</th> 
-        <th>Name</th> 
-      
+        <th>ID<i class='bx bx-sort' ></i></th> 
+        <th>Category<i class='bx bx-sort' ></i></th> 
+        
+        <th>Stock<i class='bx bx-sort' ></i></th> 
+        <th>Sales<i class='bx bx-sort' ></i></th> 
+       <th>Status<i class='bx bx-sort' ></i></th> 
              
 
     </tr>
@@ -31,8 +31,8 @@
         <td> {{row.id}}</td>
         <td>{{row.col1}}</td>
         <td>{{row.col2}}</td>
-      
-        <td><button id="btn-green">Action</button></td>
+        <td>{{row.col3}}</td>
+        <td><button id="btn-green" :style="{background: row.backgroundColor, color:row.color}">{{row.status}}</button></td>
 
 
     </tr>
@@ -67,7 +67,7 @@ export default ({
 <style scoped>
 
 th{
-    border-bottom:3px solid black;
+    border:none;
 
 }
 .user-table {
@@ -75,32 +75,34 @@ th{
    justify-content: center;
    align-items: center;
    margin: 0 1rem;
+ 
 }
 tbody{
     color:black;
 }
-
+table{
+    margin-top:50px;
+    
+}
 table.tbl {
-   box-shadow: 4px 8px 12px rgba(28, 6, 49, 0.4);
+  border:none;
    border-collapse: collapse; /* Hücre içi çizgileri birleştir */
     background-color: white;
    overflow: hidden;
    width: 100%;
    text-align: center;
    table-layout: fixed;
-   border-radius:5px;
+   border-radius:10px;
+    
 }
 
 table.tbl th {
    font-size: 15px;
 }
 td{
-    font-size:15px;
+    font-size:14px;
 }
-td:hover{
-    background:#D5D9E5;
-    opacity: 1px;
-}
+
 table.tbl th,
 table.tbl td {
    padding: 0.5rem 2rem;
@@ -110,6 +112,7 @@ table.tbl td {
 
 table.tbl th {
    cursor: pointer;
+   background-color:#EDEEF3;
 }
 .table-user-name p {
    font-weight: bold;
@@ -124,20 +127,27 @@ table.tbl th {
   
 }
 tr{
-    border-bottom: 1px solid #E4E4E4;
+    border:none;
+    border-radius: 50px;
+  
+}
+tr:hover{
+    background-color:#EDEEF3;
+      border-radius: 50px;
+      
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .mainhead th{
    border-bottom: 1px solid #E4E4E4;
 }
 #btn-green{
-    border:1px solid #000080;
-    background-color: white;
+   border: none;
+ color: #2ba972;
+    background-color: rgba(43, 169, 114, 0.2);
+
     height:22px;
     width:62px;
     border-radius: 5px;
 }
-#btn-green:hover{
-    background: #000080;
-    color:white;
-}
+
 </style>
