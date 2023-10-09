@@ -68,7 +68,7 @@ export default ({
 
 th{
     border:none;
-
+ color: #7d84ab;
 }
 .user-table {
    display: flex;
@@ -78,7 +78,7 @@ th{
  
 }
 tbody{
-    color:black;
+  color: #7d84ab;
 }
 table{
     margin-top:50px;

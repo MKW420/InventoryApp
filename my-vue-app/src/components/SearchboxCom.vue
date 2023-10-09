@@ -7,11 +7,16 @@
     
     <input id="search-input"  type="text" placeholder="Search..." />
      
+      <label class="switch">
+        <input type="checkbox" id="checkbox" @click="toggle()">
+        <span class="slider"></span>
+      </label>
+<!--     
+     <i class='bx bxs-moon  bx-sm' id="night-mode"></i> -->
     
-     <i class='bx bxs-moon  bx-sm' id="night-mode"></i>
-   
      <div class="img">
        <img  class="pic" src="../assets/pex2.jpg" />
+     
        <div class="dropdown-content">
         <a><i class='bx bxs-user sm' ></i>Profile</a>
         <a><i class='bx bxs-cog sm'></i>Settings</a>
@@ -32,11 +37,40 @@ export default {
       searchQuery: "",
     };
   },
-  // methods: {
-  //     handleSearch() {
-  //         this. $emit ("search", this.searchQuery)
-  //     }
-  // }
+  
+  mounted(){
+    if(window.matchMedia("(prefers-color-scheme: dark)").matches){
+      window.localStorage.setItem("isDarkMode", "true");
+    }
+  },
+ 
+  methods: {
+      // handleSearch() {
+      //     this. $emit ("search", this.searchQuery)
+      // }
+
+      toggle(){
+        const isDarkMode = window.localStorage.getItem("isDarkMode") == "true";
+
+        if(isDarkMode){
+          window.localStorage.setItem("isDarkMode", "false");
+          document.body.style.background = "#f3f6fd";
+          document.getElementById("sidebardark").style.background = "#f3f6fd";
+          document.getElementById("nav-bar").style.background = "#f3f6fd";
+          document.getElementById("menu-link").style.color= "#000000";
+          document.getElementById("checkbox").checked = true;
+
+        }
+        else{
+          window.localStorage.setItem("isDarkMode", "true");
+          document.body.style.background = "#222B5F";
+          document.getElementById("sidebardark").style.background = "#222B5F";
+          document.getElementById("menu-link").style.color= "#7d84ab";
+          document.getElementById("nav-bar").style.background = "#222B5F";
+          document.getElementById("checkbox").checked = false;
+        }
+      }
+  }
 };
 </script>
 
@@ -44,7 +78,7 @@ export default {
 @import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
 .search-box {
   padding: 10px;
-
+ 
   margin-left:20%;
  
 }
@@ -91,7 +125,7 @@ i{
 .dropdown-content{
   display:none;
   position:absolute;
-  background-color:#f9f9f9;
+  background-color:#f3f6fd;
 min-width:160px;
 box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
 z-index:1;
@@ -117,6 +151,59 @@ cursor: pointer;
 margin-left:400px;
 margin-top:10px;
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  border-radius: 50px;
+  margin-left:350px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+    border-radius: 50px;;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+   border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+   border-radius: 50px;;
+}
+
+input:checked + .slider {
+  background-color: #222B5F;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #222B5F;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
 /* Large devices (laptops/desktops, 1024px and up) */
 @media only screen and (min-width: 1024px) {
  #night-mode{
@@ -246,11 +333,7 @@ font-size:12px;
   width:20px;
  
 }
- #night-mode{
-margin-left:8px;
-margin-top:10px;
 
-}
 .dropdown-content{
 
 min-width:140px;
@@ -263,6 +346,27 @@ border-radius: 10px;
 .dropdown-content a{
 font-size:12px;
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+  border-radius: 50px;
+  margin-left:0px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+   border-radius: 50px;;
+}
+
 }
 @media only screen and (min-width: 401px)and (max-width: 459px) {
 
@@ -332,11 +436,7 @@ font-size:12px;
   width:20px;
  
 }
- #night-mode{
-margin-left:25px;
-margin-top:10px;
 
-}
 .dropdown-content{
 
 min-width:140px;

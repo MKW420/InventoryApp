@@ -4,8 +4,8 @@
     <div class="head-title">
       <div class="left"></div>
       <ul class="box-info">
-        <li v-for="card in cards" :key="card.id">
-
+        <li v-for="card in cards" :key="card.id"    :style="{  background: card.backgroundColorblock }">
+            
           <div class="IconBx">
                 <i
             class="bx"
@@ -84,7 +84,7 @@ body {
 
 .box-info li {
   padding: 5px;
-  background: var(--light);
+ 
   border-radius: 6px;
   grid-gap: 15px;
   display: table-cell;
@@ -92,13 +92,14 @@ body {
   box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
   /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
   cursor: pointer;
+  background: #9BB4DA;
  
 }
 
 .box-info li:hover{
-  border-bottom:10px solid #000080;
 
-    background:#D5D9E5;
+
+  
 }
 .box-info li .bx {
   width: 300px;
@@ -118,9 +119,10 @@ body {
   
 
 }
+
 h2{
   font-size:70%;
-  color:var(--jumbo);
+  color: #083346;
    display: flex;
   justify-content: center;
   align-items: center;
@@ -954,6 +956,7 @@ h1{
   grid-gap: 20px;
 
 }
+
 h2{
   font-size:75%;
   color:var(--jumbo);

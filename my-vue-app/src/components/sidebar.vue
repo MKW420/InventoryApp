@@ -1,6 +1,6 @@
 <template>
 
-  <div class="sideNav" :class="{'small-menu':smallMenuToggle}" >
+  <div class="sideNav" :class="{'small-menu':smallMenuToggle}"  id="sidebardark">
      
            <span  @click="smallMenuToggle = !smallMenuToggle">
             
@@ -32,30 +32,7 @@
     />
 
     
-  <div id="block-bottom">
-    <ul>
-      <li><i class='bx bx-log-out'></i>Logout</li>
-      <input 
-      @change="toggleTheme"
-      id="checkbox"
-      type="checkbox"
-      class="switch-checkbox"
-      />
-      <label for="checkbox" class="switch-label">
 
-      <li><i class='bx bxs-moon' ></i>Night Mode
-      </li>
-      <div 
-      class="switch-toggle"
-      :class="{'switch-toggle-checked': userTheme === 'dark-theme'}">
-      
-      </div>
-      
-      </label>
-    </ul>
-
-
-    </div>
   </div>
 </template>
 
@@ -63,47 +40,6 @@
 import SidebarLink from "./SidebarLink.vue";
 
 export default {
-  mounted(){
-    const initUserTheme = this.getTheme || this.getMediaPreference();
-    this.setTheme(initUserTheme);
-  },
-
-  dataR(){
-    return{
-      userTheme:"light-Theme",
-    };
-  },
-methods: {
-    setTheme(theme) {
-      localStorage.setItem("user-theme", theme);
-      this.userTheme = theme;
-      document.documentElement.className = theme;
-    },
-    getMediaPreference() {
-    const hasDarkPreference = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    if (hasDarkPreference) {
-      return "dark-theme";
-    } else {
-      return "light-theme";
-    }
-  },
-  toggleTheme() {
-    const activeTheme = localStorage.getItem("user-theme");
-    if (activeTheme === "light-theme") {
-      this.setTheme("dark-theme");
-    } else {
-      this.setTheme("light-theme");
-    }
-  },
-  getTheme() {
-  return localStorage.getItem("user-theme");
-},
-
-
-},
-
 
   components: { SidebarLink },
 
@@ -185,19 +121,19 @@ ul{
   display: flex;
   flex-direction: column;
 
-  width:180px;
-
+  width:190px;
+ background: #f3f6fd;
   left: 0;
   top: 0px;
   z-index: 1;
   padding: 0.3em;
   bottom: 0;
-  opacity:0.8;
+ 
   transition: all 0.5s ease;
   overflow: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-     background:white;
-     box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+   
+
 }
 
 body.darkTheme{
@@ -222,7 +158,7 @@ img {
 }
 li{
   margin-top:30px;
-   color: #4D4C59;
+   color: #083346;
      font-weight:500;
 }
 .small-menu{
@@ -235,13 +171,13 @@ width:36px;
 .logo-name{
   display: flex;
   flex-direction:column;
-  color: black;
+   color:#7d84ab;
 }
 .p-logo
 {
   font-size:8px;
   margin-left:5px;
-    color: #4D4C59;
+     color:#7d84ab;
 }
 .name{
 margin-top:13px;
