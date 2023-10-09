@@ -1,12 +1,11 @@
 <template>
   <main>
-    
 	<LoadingTracker v-if="isLoading"></LoadingTracker>
-   
     <nav>
       <SearchboxCom />
     </nav>
     <div id="cat-banner">
+
       
      
     </div>
@@ -18,6 +17,7 @@
         </div>
       </div>
     </div>
+
   </main>
 </template>
 
@@ -25,13 +25,16 @@
 import CategoryCom from "../components/CategoryCom.vue";
 import Sidebar from "../components/sidebar.vue";
 import SearchboxCom from "../components/SearchboxCom.vue";
+
   import LoadingTracker from "../components/LoadingCom.vue"
+
 
 export default {
   components: {
     CategoryCom,
     Sidebar,
     SearchboxCom,
+
       LoadingTracker
   },
  mounted(){
@@ -44,6 +47,7 @@ export default {
           isLoading: true,
         }
   },  
+
 
   setup() {
     return {
@@ -86,11 +90,14 @@ export default {
         },
       ],
     };
+
   }
+
 };
 </script>
 
 <style scoped>
+
 
 main {
   font-family: "Roboto", serif;
@@ -107,6 +114,7 @@ main {
   height: 100vh;
   width: 100%;
 }
+
 #main-category-block {
   background: white;
   /* border:3px solid red;  */
@@ -169,6 +177,7 @@ nav {
     width: 100%;
     margin-left: 0;
   }
+
 
   #cat-add {
     width: 80%;
@@ -319,6 +328,7 @@ nav {
   #cat-input {
     width: 60%;
     height: 50px;
+
     border: 1px solid grey;
     color: black;
     text-align: center;

@@ -1,4 +1,5 @@
 <template>
+
 <body>
   <LoadingTracker v-if="isLoading"></LoadingTracker>
   <div id="main-section" color-scheme="dark">
@@ -6,11 +7,13 @@
     <Sidebar v-if="!isLoading"/>
     <nav id="nav-bar">
       <SearchboxCom  v-if="!isLoading" />
+
     </nav>
 
     <div id="main-board">
       <h1 id="heading">Dashboard</h1>
-    
+
+
       <div id="main-stats">
         <DashboardTrack :cards="dashboardData" @click="ProductPage" />
         <router-view></router-view>
@@ -54,7 +57,9 @@
           </div>
           <div
             class="sales"
+
             id="sales-darkmode"
+
             v-for="sale in sales"
             :key="sale.id"
             :value="sale.id"
@@ -66,16 +71,20 @@
 
         <div id="feed">
           <div id="feed-summary">
+
            <i class='bx bxs-layer-plus'></i>
             <span class="rigup">total returns</span>
             <h1>2.5K</h1>
           </div>
         
+
         </div>
       </div>
     </div>
   </div>
+
   </body>
+
 </template>
 
 <script>
@@ -86,6 +95,7 @@ import DashboardTrack from "../components/block.vue";
   import LoadingTracker from "../components/LoadingCom.vue"
 
 
+
 // import ProgressCom from "../components/progressCom.vue"
 
 export default {
@@ -93,6 +103,7 @@ export default {
     Sidebar,
     SearchboxCom,
     DashboardTrack,
+
      LoadingTracker
   },
  
@@ -108,6 +119,7 @@ export default {
   },  
   methods: {
     
+
     ProductPage() {
       this.$router.push("/Products");
     },
@@ -139,10 +151,12 @@ export default {
         {
           id: 1,
           name: "Brand 1",
+
           backgroundcolor: "#7d84ab",
           width: "50%",
           percentage: "80%",
           
+
         },
         {
           id: 2,
@@ -159,6 +173,7 @@ export default {
           percentage: "80%",
         },
         {
+
           id: 4,
           name: "Brand 4",
           backgroundcolor: "#EB3E1B",
@@ -176,7 +191,7 @@ export default {
           name: "Total Suppliers",
           color: "#083346",
           backgroundColor: "",
-         
+
         },
         {
           id: 2,
@@ -186,7 +201,6 @@ export default {
           name: "Total Brands",
           color: "#083346",
           backgroundColor: "",
-
         },
         {
           id: 3,
@@ -217,6 +231,7 @@ export default {
 <style scoped>
 @import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
 @import url("https://api.iconify.design/mingcute/notification-line.svg");
+
 body{
 
 min-height: 100vh;
@@ -224,6 +239,7 @@ min-height: 100vh;
 }
 #main-section {
   font-family: "Roboto", serif;
+
   height: 1500px;
   width: 100%;
   margin-top: -5px;
@@ -231,6 +247,7 @@ min-height: 100vh;
 nav {
   height: 70px;
  background: #f3f6fd;
+
 }
 #picture-brand {
   /* border:3px solid green; */
@@ -272,6 +289,7 @@ nav {
   margin: 20px;
   margin-left: 10px;
 
+
 }
 #main-progress {
   height: 350px;
@@ -282,7 +300,9 @@ nav {
 }
 #perc-num {
   float: right;
+
    color:#7d84ab;
+
   font-size: 12px;
   margin-left: 15px;
   font-weight: bold;
@@ -308,7 +328,9 @@ nav {
   justify-content: center;
   align-content: center;
   border-radius: 10px;
+
   background: #f3f6fd;
+
 }
 .sales span {
   margin: 8px;
@@ -319,7 +341,9 @@ nav {
 .sales:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
+
   border-left: 10px solid #7d84ab;;
+
 }
 #progress-bar-section {
   width: 30%;
@@ -341,10 +365,12 @@ nav {
 
 #feed {
   height: 350px;
+
   width: 20%;
   display: flex;
   flex-direction: row;
   
+
   /* display:inline-block; */
   border-radius: 10px;
 }
@@ -361,7 +387,9 @@ nav {
 
   border-radius: 10px;
 
+
   background-color: #f3f6fd;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -385,7 +413,9 @@ nav {
 #heading {
   font-weight: bold;
   margin-left: 20px;
+
   color: #7d84ab;
+
 }
 
 #progress-perc-1 {
@@ -416,7 +446,9 @@ img {
 .h3-head {
   margin-left: 10px;
   font-size: 15px;
+
    color:#7d84ab;
+
 }
 .btn-sm {
   width: 120px;
@@ -447,6 +479,7 @@ width:250px;
   width: 50%;
   height: 8px;
   
+
   border-radius: 50px;
   display: inline-block;
   margin-left: 15px;
@@ -458,6 +491,7 @@ width:250px;
 #progress-perc-3 {
   width: 20%;
   height: 8px;
+
   
   border-radius: 50px;
   display: inline-block;
@@ -469,7 +503,6 @@ width:250px;
 #progress-perc-4 {
   width: 70%;
   height: 15px;
-
   border-radius: 50px;
   display: inline-block;
   margin-left: 15px;
@@ -663,6 +696,7 @@ width:250px;
   }
   .main-sr {
     height: 250px;
+
     width: 40%;
   }
   .main-sr i {
@@ -687,10 +721,12 @@ width:250px;
     height: 200px;
     margin: 8px;
     margin-top: 0px;
+
     margin-left: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
+
     background:#D0E7D2;
   }
   #feed-summary h1 {
@@ -704,6 +740,7 @@ font-size:40px;
 }
   .header-sr {
     width: 100%;
+
     height: 80px;
   }
   .btn-sm {
@@ -715,7 +752,9 @@ font-size:40px;
     font-size: 20px;
     font-weight: bold;
   }
+
   
+
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 640px) and (max-width: 767px) {

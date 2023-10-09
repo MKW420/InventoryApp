@@ -1,7 +1,9 @@
 <template>
   <div id="main">
+
      <LoadingTracker v-if="isLoading"></LoadingTracker>
     <Sidebar v-if="!isLoading" />
+
 
     <div id="form">
       <img
@@ -89,6 +91,7 @@
 
 <script>
 import Sidebar from "../components/sidebar.vue";
+
  import LoadingTracker from "../components/LoadingCom.vue"
 export default {
   components: {
@@ -106,6 +109,7 @@ export default {
           isLoading: true,
         }
   },  
+
   setup() {},
 };
 </script>
@@ -130,7 +134,8 @@ export default {
   height: 750px;
 
   margin-top: 0px;
-  
+
+
 }
 .row {
   border: 1px solid #f1f1f1;
@@ -171,7 +176,7 @@ export default {
 .textheading {
   float: left;
   margin-left: 20px;
-  
+
 }
 .bx-second {
   margin-left: 20px;
