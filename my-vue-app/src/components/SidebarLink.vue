@@ -5,12 +5,13 @@
 
     <div
       class="label"
+      
       @click="toggleMenu()"
       :style="{ paddingLeft: depth * 20 + 20 + 'px' }"
     >
 
     <div class="left">
-      <span >{{ label }}</span>
+      <span id="menu-link" >{{ label }}</span>
       </div>
       <div v-if="data" class="right">
         <i class="" :class="{opened:expanded}"></i>
@@ -125,24 +126,27 @@ export default {
   top: 10px;
 }
 .menu-item > .label {
-  color: white;
+ 
   width: 100%;
   display: flex;
   /* 
    align-items: center;
    justify-content: center; */
   flex-direction: row;
-  margin-left: 20px;
+  margin-left: 0px;
   white-space: nowrap;
   user-select: none;
   height: 50px;
-
+ color:#7d84ab;
   margin-top:15px;
   box-sizing: border-box;
-   color: black;
+  border-radius:8px;
+   font-weight:bold;
      font-weight:500;
 }
-
+.menu-item > .label:hover{
+  Background:#9BB4DA;
+}
 .menuitem div {
   display: flex;
   align-items: center;
@@ -150,7 +154,7 @@ export default {
 }
 i {
   font-size: 20px;
-
+ 
   transition: all 0.3s ease;
  
 }
@@ -167,9 +171,7 @@ i {
   cursor: pointer;
   color: black;
 }
-.label:hover {
-  
-}
+
 .items-container {
   width: 100%;
   left:calc(100%+6px);
@@ -183,7 +185,7 @@ i {
 
   cursor: pointer;
   position: relative;
-  font-weight: 400;
+  font-weight: 900;
   user-select: none;
 
   margin: 0.1em 0;
@@ -194,8 +196,7 @@ i {
   color: white;
   text-decoration: none;
 }
-.link:hover {
-}
+
 /* Small devices (phones) */
 
 @media only screen and (min-width:640px) and (max-width: 767px){

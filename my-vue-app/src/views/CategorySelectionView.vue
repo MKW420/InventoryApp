@@ -1,23 +1,23 @@
 <template>
   <main>
+	<LoadingTracker v-if="isLoading"></LoadingTracker>
     <nav>
       <SearchboxCom />
     </nav>
     <div id="cat-banner">
-      <BannerCom />
-      <div id="cat-add">
-        <h2 id="cat-h2">All Categories</h2>
-        <input type="text" id="cat-input" placeholder=" 🔍 enter keyword" />
-      </div>
+
+      
+     
     </div>
     <div class="main1">
-      <Sidebar />
+          <Sidebar v-if="!isLoading"></Sidebar>
       <div id="main-category-section">
         <div id="main-category-block">
           <CategoryCom :categories="CategoryData" />
         </div>
       </div>
     </div>
+
   </main>
 </template>
 
@@ -25,15 +25,29 @@
 import CategoryCom from "../components/CategoryCom.vue";
 import Sidebar from "../components/sidebar.vue";
 import SearchboxCom from "../components/SearchboxCom.vue";
-import BannerCom from "../components/bannerCom.vue";
+
+  import LoadingTracker from "../components/LoadingCom.vue"
+
 
 export default {
   components: {
     CategoryCom,
     Sidebar,
     SearchboxCom,
-    BannerCom,
+
+      LoadingTracker
   },
+ mounted(){
+    setTimeout(() => { this.isLoading =false;},
+    4000);
+},
+  data() {
+        return {
+          
+          isLoading: true,
+        }
+  },  
+
 
   setup() {
     return {
@@ -76,11 +90,15 @@ export default {
         },
       ],
     };
-  },
+
+  }
+
 };
 </script>
 
 <style scoped>
+
+
 main {
   font-family: "Roboto", serif;
   background-color: white;
@@ -96,6 +114,7 @@ main {
   height: 100vh;
   width: 100%;
 }
+
 #main-category-block {
   background: white;
   /* border:3px solid red;  */
@@ -158,6 +177,7 @@ nav {
     width: 100%;
     margin-left: 0;
   }
+
 
   #cat-add {
     width: 80%;
@@ -308,6 +328,7 @@ nav {
   #cat-input {
     width: 60%;
     height: 50px;
+
     border: 1px solid grey;
     color: black;
     text-align: center;

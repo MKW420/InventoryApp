@@ -1,6 +1,7 @@
 <template>
   <div id="main-prod">
-    <Sidebar />
+     <LoadingTracker v-if="isLoading"></LoadingTracker>
+    <Sidebar   v-if="!isLoading"/>
    
  
     <div id="prod-Tbl">
@@ -50,7 +51,7 @@
 
 <script>
 import Sidebar from "../components/sidebar.vue";
-
+ import LoadingTracker from "../components/LoadingCom.vue"
 
 import TblTrackCom from "../components/table/tableCom.vue";
 
@@ -58,12 +59,18 @@ export default {
   components: {
     Sidebar,
    
-
+    LoadingTracker,
     TblTrackCom,
   },
 
+  mounted(){
+    setTimeout(() => { this.isLoading =false;},
+    4000);
+},
+  
   data() {
     return {
+      isLoading: true,
       Tbldata: [
         {
           id: 1,

@@ -1,9 +1,9 @@
 <template>
 <div class="body">
        
-
+ <LoadingTracker v-if="isLoading"></LoadingTracker>
   <div class="container">
-     <img alt="Inventory App logo" src="../assets/img/logoill.png" />
+     <img alt="Inventory App logo" src="../assets/LOGOIN.png" />
    
     <p class="login-info">Please enter your login credentials</p>
     <form>
@@ -27,17 +27,27 @@
 </template>
 
 <script>
-
+ import LoadingTracker from "../components/LoadingCom.vue"
 
 
 export default({
     name: "LoginView",
-  components: {  },
+  components: {   LoadingTracker },
 
    
   
   // Necessary component logic here
    
+  mounted(){
+    setTimeout(() => { this.isLoading =false;},
+    4000);
+},
+  data() {
+        return {
+          
+          isLoading: true,
+        }
+  },  
  
 });
 </script>
@@ -49,9 +59,9 @@ export default({
   margin: 100px auto;
   padding: 50px;
   height:500px;
-  background-color: #2E6DD8;
+  background-color: #7d84ab;
   border-radius: 10px;
- box-shadow: 0  0 20px #2E6DD8;
+ box-shadow: 0  0 20px #7d84ab;
    font-family: 'Roboto', serif;
 
 }
@@ -63,7 +73,7 @@ export default({
     overflow:hidden;
     width: 100%;
     height: 100vh;
-  background: linear-gradient(-45deg, #00000e 0%, #2E6DD8 23%, #000080 50%100%);;
+  background: linear-gradient(-45deg, #00000e 0%, #7d84ab 23%, #222B5F 50%100%);;
   background-size: 400% 400%;
  display: flex;
   align-items: center;
@@ -101,11 +111,11 @@ export default({
 }
 
 .form-group input {
-  width: 80%;
+  width: 100%;
   padding: 10px;
   border-radius: 5px;
-  color:#F49E06;
-  background: #2E6DD8;
+  color:grey;
+  background: #f3f6fd;
   border: 1px solid #ccc;
 }
 
@@ -113,10 +123,10 @@ export default({
 
   
   cursor: pointer;
-     color:#000080;
+     color:#ccc;
     border: 1px solid #fff;
     border-radius: 10px;
-    background:#F49E06;
+    background:#222B5F;
    
     height:50px;
     width:300px;
@@ -124,8 +134,8 @@ export default({
     font-size:15px;
     z-index:1;
   
-    border: 2px solid #F49E06;
-    box-shadow: 0  0 20px #F49E06;
+    border: 2px solid #222B5F;
+    box-shadow: 0  0 20px #222B5F;
     border-radius: 4px;
 }
 
@@ -139,7 +149,7 @@ img{
   margin-left: 110px;
 }
 a{
-  color:#F49E06;
+  color:black;
 }
 @keyframes animate{
   0%{

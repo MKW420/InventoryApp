@@ -6,7 +6,8 @@ import DashboardView from "../views/DashboardView.vue";
 import LandingView from "../views/LandingView.vue";
 import CategorySelectionView from "../views/CategorySelectionView.vue"
 import ProductView from "../views/ProductView.vue"
-import AddProductView from "../views/AddProductView.vue"
+import AddProductView from "../views/AddProductView.vue";
+import exampleView from "../views/exampleView.vue";
 // import App from "../views/App.vue";
 
 const routes = [
@@ -16,6 +17,7 @@ const routes = [
   { path: "/CategorySelection", component: CategorySelectionView },
   { path: "/Products", component: ProductView },
   { path: "/AddProducts", component: AddProductView },
+  { path: "/Example", component: exampleView },
 ];
 
 

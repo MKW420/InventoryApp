@@ -1,12 +1,19 @@
 <template>
-  <div id="main-section">
-    <Sidebar />
+
+<body>
+  <LoadingTracker v-if="isLoading"></LoadingTracker>
+  <div id="main-section" color-scheme="dark">
+
+    <Sidebar v-if="!isLoading"/>
     <nav id="nav-bar">
-      <SearchboxCom />
+      <SearchboxCom  v-if="!isLoading" />
+
     </nav>
 
     <div id="main-board">
       <h1 id="heading">Dashboard</h1>
+
+
       <div id="main-stats">
         <DashboardTrack :cards="dashboardData" @click="ProductPage" />
         <router-view></router-view>
@@ -50,6 +57,9 @@
           </div>
           <div
             class="sales"
+
+            id="sales-darkmode"
+
             v-for="sale in sales"
             :key="sale.id"
             :value="sale.id"
@@ -61,25 +71,30 @@
 
         <div id="feed">
           <div id="feed-summary">
-            <i class="bx bxs-user"></i>
+
+           <i class='bx bxs-layer-plus'></i>
             <span class="rigup">total returns</span>
             <h1>2.5K</h1>
           </div>
-          <div id="feed-summary">
-            <i class="bx bxs-user"></i>
-            <span class="rigup">total customers</span>
-            <h1>2.5K</h1>
-          </div>
+        
+
         </div>
       </div>
     </div>
   </div>
+
+  </body>
+
 </template>
 
 <script>
 import Sidebar from "../components/sidebar.vue";
 import SearchboxCom from "../components/SearchboxCom.vue";
 import DashboardTrack from "../components/block.vue";
+
+  import LoadingTracker from "../components/LoadingCom.vue"
+
+
 
 // import ProgressCom from "../components/progressCom.vue"
 
@@ -88,9 +103,23 @@ export default {
     Sidebar,
     SearchboxCom,
     DashboardTrack,
-  },
 
+     LoadingTracker
+  },
+ 
+  mounted(){
+    setTimeout(() => { this.isLoading =false;},
+    4000);
+},
+  data() {
+        return {
+          
+          isLoading: true,
+        }
+  },  
   methods: {
+    
+
     ProductPage() {
       this.$router.push("/Products");
     },
@@ -122,9 +151,12 @@ export default {
         {
           id: 1,
           name: "Brand 1",
-          backgroundcolor: "#000080",
+
+          backgroundcolor: "#7d84ab",
           width: "50%",
           percentage: "80%",
+          
+
         },
         {
           id: 2,
@@ -136,11 +168,12 @@ export default {
         {
           id: 3,
           name: "Brand 3",
-          backgroundcolor: "#000080",
+          backgroundcolor: "#7d84ab",
           width: "80%",
           percentage: "80%",
         },
         {
+
           id: 4,
           name: "Brand 4",
           backgroundcolor: "#EB3E1B",
@@ -158,6 +191,7 @@ export default {
           name: "Total Suppliers",
           color: "#083346",
           backgroundColor: "",
+
         },
         {
           id: 2,
@@ -197,17 +231,23 @@ export default {
 <style scoped>
 @import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
 @import url("https://api.iconify.design/mingcute/notification-line.svg");
+
+body{
+
+min-height: 100vh;
+
+}
 #main-section {
   font-family: "Roboto", serif;
 
-  background-color: #f5f6f8;
   height: 1500px;
   width: 100%;
   margin-top: -5px;
 }
 nav {
   height: 70px;
-  background: white;
+ background: #f3f6fd;
+
 }
 #picture-brand {
   /* border:3px solid green; */
@@ -248,7 +288,8 @@ nav {
   border-radius: 10px;
   margin: 20px;
   margin-left: 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+
 }
 #main-progress {
   height: 350px;
@@ -259,7 +300,9 @@ nav {
 }
 #perc-num {
   float: right;
-  color: black;
+
+   color:#7d84ab;
+
   font-size: 12px;
   margin-left: 15px;
   font-weight: bold;
@@ -285,6 +328,9 @@ nav {
   justify-content: center;
   align-content: center;
   border-radius: 10px;
+
+  background: #f3f6fd;
+
 }
 .sales span {
   margin: 8px;
@@ -295,7 +341,9 @@ nav {
 .sales:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
-  border-left: 10px solid #000080;
+
+  border-left: 10px solid #7d84ab;;
+
 }
 #progress-bar-section {
   width: 30%;
@@ -317,10 +365,12 @@ nav {
 
 #feed {
   height: 350px;
-  width: 30%;
+
+  width: 20%;
   display: flex;
   flex-direction: row;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+
   /* display:inline-block; */
   border-radius: 10px;
 }
@@ -337,7 +387,9 @@ nav {
 
   border-radius: 10px;
 
-  background-color: #e6e6e6;
+
+  background-color: #f3f6fd;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -361,7 +413,9 @@ nav {
 #heading {
   font-weight: bold;
   margin-left: 20px;
-  color: #083346;
+
+  color: #7d84ab;
+
 }
 
 #progress-perc-1 {
@@ -392,23 +446,40 @@ img {
 .h3-head {
   margin-left: 10px;
   font-size: 15px;
+
+   color:#7d84ab;
+
 }
 .btn-sm {
   width: 120px;
   height: 25px;
   margin-left: 450px;
   margin-top: 13px;
+    background-color: #EDEEF3;
+    color:#083346;
+    border:none;
+border-radius: 8px;
+height:30px;
+width:250px;
+
+
+}
+.btn-sm:hover{
+  border:1px solid #6291fd;
+  cursor: pointer;
 }
 #name-brand {
   margin-left: 35px;
   font-weight: bold;
   font-size: 13px;
   margin-top: 3px;
+   color:#7d84ab;
 }
 #progress-perc-2 {
   width: 50%;
   height: 8px;
-  background-color: #000080;
+  
+
   border-radius: 50px;
   display: inline-block;
   margin-left: 15px;
@@ -420,7 +491,8 @@ img {
 #progress-perc-3 {
   width: 20%;
   height: 8px;
-  background-color: #eb3e1b;
+
+  
   border-radius: 50px;
   display: inline-block;
   margin-left: 15px;
@@ -431,7 +503,6 @@ img {
 #progress-perc-4 {
   width: 70%;
   height: 15px;
-  background-color: #000080;
   border-radius: 50px;
   display: inline-block;
   margin-left: 15px;
@@ -625,38 +696,51 @@ img {
   }
   .main-sr {
     height: 250px;
-    width: 30%;
+
+    width: 40%;
   }
   .main-sr i {
-    margin-left: 295px;
+    margin-left: 395px;
   }
 
   #feed {
-    height: 230px;
-    width: 20%;
-    margin-top: 18px;
+    height: 200px;
+    width: 15%;
+   
     /* display:inline-block; */
     border-radius: 10px;
-    margin-left: 50px;
+    margin-left:5px;
+    margin-top:50px;
+
+       display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #feed-summary {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     margin: 8px;
-    margin-top: 50px;
+    margin-top: 0px;
+
     margin-left: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background:#D0E7D2;
   }
   #feed-summary h1 {
     font-weight: bold;
-    margin-left: 80px;
-    font-size: 20px;
+    margin-left:120px;
+    font-size: 30px;
   }
-
+#feed-summary > i{
+  color:#79AC78;
+font-size:40px;
+}
   .header-sr {
-    width: 90%;
+    width: 100%;
+
     height: 80px;
   }
   .btn-sm {
@@ -668,6 +752,9 @@ img {
     font-size: 20px;
     font-weight: bold;
   }
+
+  
+
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 640px) and (max-width: 767px) {
